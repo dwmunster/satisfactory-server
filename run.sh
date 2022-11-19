@@ -103,8 +103,11 @@ fi
 
 cp -a "/config/saves/." "/config/backups/"
 cp -a "${GAMESAVESDIR}/server/." "/config/backups" # useless in first run, but useful in additional runs
+cp -a "${GAMESAVESDIR}/blueprints/." "/config/backups/blueprints" # useless in first run, but useful in additional runs
+rm -rf "${GAMESAVESDIR}/blueprints"
 rm -rf "${GAMESAVESDIR}/server"
 ln -sf "/config/saves" "${GAMESAVESDIR}/server"
+ln -sf "/config/blueprints" "${GAMESAVESDIR}/blueprints"
 ln -sf "/config/ServerSettings.${SERVERQUERYPORT}" "${GAMESAVESDIR}/ServerSettings.${SERVERQUERYPORT}"
 
 cp /home/steam/*.ini "${GAMECONFIGDIR}/Config/LinuxServer"
